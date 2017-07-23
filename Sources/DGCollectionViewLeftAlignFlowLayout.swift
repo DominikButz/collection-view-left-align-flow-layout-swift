@@ -54,7 +54,7 @@ public class DGCollectionViewLeftAlignFlowLayout: UICollectionViewFlowLayout {
 		let previousFrame: CGRect = previousAttributes?.frame ?? CGRect()
 	//	let firstInRow = previousFrame.origin.y != attributes.frame.origin.y   // only works for cells with equal height
         
-        let firstInRow = (previousFrame.origin.y + previousFrame.height / 2.0)  < (attributes.frame.origin.y + attributes.frame.height / 2.0) - 1.0
+        let firstInRow = previousAttributes!.center.y < attributes.center.y - 1.0
 
        // print("first in row \(firstInRow)")
         
