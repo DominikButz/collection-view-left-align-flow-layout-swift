@@ -31,7 +31,7 @@ extension DemoViewController: UICollectionViewDataSource {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 10
+		return 12
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,9 +56,11 @@ extension DemoViewController: UICollectionViewDataSource {
 }
 
 extension DemoViewController: UICollectionViewDelegateFlowLayout {
+    
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let width: Int = (indexPath.item > 3 && indexPath.item % 2 == 0) ? 150 : 60
-		return CGSize(width: width, height: 100)
+		let width: Int = (indexPath.item % 3 == 0) ? 60 : 80
+        let height: Int = (indexPath.item > 2 && indexPath.item % 2 == 0) ? 70 : 50
+		return CGSize(width: width, height: height)
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
